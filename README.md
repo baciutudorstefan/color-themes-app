@@ -19,4 +19,4 @@ To get started with the Awesome Vue 3 TypeScript App, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/awesome-vue3-ts-app.git
+   git clone https://github.com/baciutudorstefan/vue-ts-app.git
