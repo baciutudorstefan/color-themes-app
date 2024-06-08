@@ -13,7 +13,9 @@
       <div
         v-for="(shade, index) in shades"
         :key="index"
+        @click="copyShade(shade)"
         class="flex flex-col items-center mb-2"
+        style="cursor: pointer;"
       >
         <div :style="{ backgroundColor: shade.color }" class="h-6 w-full rounded"></div>
         <div class="text-xs text-gray-500 mt-1">{{ shade.name }}</div>
@@ -108,6 +110,13 @@ const copyShades = () => {
   const shadesText = shades.value.map(shade => `${shade.name}: ${shade.color}`).join('\n');
   navigator.clipboard.writeText(shadesText).then(() => {
     alert('Shades copied to clipboard!');
+  });
+};
+
+const copyShade = (shade: Shade) => {
+  const shadeText = `${shade.name}: ${shade.color}`;
+  navigator.clipboard.writeText(shadeText).then(() => {
+    alert('Shade color copied to clipboard!');
   });
 };
 
