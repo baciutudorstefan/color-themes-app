@@ -1,4 +1,4 @@
-# Awesome Vue 3 TypeScript App
+# Awesome Vue 3 TypeScript Tailwind App
 
 Welcome to the Awesome Vue 3 TypeScript App! This application is a demonstration of building modern web applications with Vue.js 3 and TypeScript. It showcases best practices and techniques for creating dynamic, responsive, and maintainable UIs.
 
