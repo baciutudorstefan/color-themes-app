@@ -1,24 +1,27 @@
 <template>
-  <div class="mb-4">
+  <div class="mb-4 relative">
     <label :for="id" class="block text-sm font-medium text-gray-700">{{ label }}</label>
-    <input
-      :id="id"
-      type="color"
-      :value="color"
-      @input="updateColor(($event.target as HTMLInputElement)?.value)"
-      class="mt-1 block w-full p-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500 sm:text-sm"
-    />
+    <div class="mt-1 relative">
+      <input
+        :id="id"
+        type="color"
+        :value="color"
+        @input="updateColor(($event.target as HTMLInputElement)?.value)"
+        class="block w-10 h-10 p-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-500 sm:text-sm absolute -right-3 top-4"
+      />
+    </div>
     <div class="text-sm text-gray-500 mt-1">{{ color }}</div>
-    <div class="mt-2">
+    <div class="mt-2 flex flex-row">
+      <p style="color: red;">
+      {{ baseColorName }}</p> 
       <div
         v-for="(shade, index) in shades"
         :key="index"
         @click="copyShade(shade)"
-        class="flex flex-col items-center mb-2"
+        class="flex flex-col items-center"
         style="cursor: pointer;"
       >
-        <div :style="{ backgroundColor: shade.color }" class="h-6 w-full rounded"></div>
-        <div class="text-xs text-gray-500 mt-1">{{ shade.name }}</div>
+        <div :style="{ backgroundColor: shade.color }" class="h-13 w-13 rounded text-center">{{ index * 100 }}</div>
       </div>
     </div>
     <button @click="copyShades" class="mt-2 text-sm text-blue-500">Copy Shades</button>
@@ -43,6 +46,7 @@ interface Shade {
 
 const emit = defineEmits(['update:color']);
 const shades = ref<Shade[]>([]);
+const baseColorName = ref('');
 
 const tailwindColors: Record<string, string[]> = {
   slate: ['#f8fafc', '#f1f5f9', '#e2e8f0', '#cbd5e1', '#94a3b8', '#64748b', '#475569', '#334155', '#1e293b', '#0f172a', '#020617'],
@@ -100,9 +104,9 @@ const getClosestTailwindColor = (color: string) => {
 
 
 const generateShades = (baseColor: string) => {
-  const baseColorName = getClosestTailwindColor(baseColor);
-  shades.value = tailwindColors[baseColorName].map((shade, index) => {
-    return { name: `${baseColorName}-${index * 100}`, color: shade };
+  baseColorName.value = getClosestTailwindColor(baseColor);
+  shades.value = tailwindColors[baseColorName.value].map((shade, index) => {
+    return { name: `${baseColorName.value} ${index * 100}`, color: shade };
   });
 };
 

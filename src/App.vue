@@ -11,8 +11,8 @@
       <div class="fixed top-0 left-0 z-50">
         <button @click="toggleNavigation" class="text-black mb-4">Toggle Colors Navigation</button>
       </div>      <!-- Navigation section -->
-      <div :class="{ 'navigation-section': true, 'active': showNavigation }">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div :class="{ 'navigation-section': true, 'active': showNavigation }" class="w-96">
+        <div class="flex flex-col md:flex-cols-2 lg:flex-cols-4 gap-4">
           <ColorInput
             v-for="(color, key) in colorSettings"
             :key="key"
@@ -67,7 +67,6 @@ body {
 }
 
 .navigation-section {
-  width: 350px; /* Adjust the width as needed */
   background-color: #f3f4f6;
   padding: 20px;
   position: fixed;
