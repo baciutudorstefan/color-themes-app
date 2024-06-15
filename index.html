@@ -1,13 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <meta
+      charset="UTF-8" />
+    <link
+      rel="icon"
+      href="/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>
+    </title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div
+      id="app"></div>
+    <script
+      type="module"
+      src="/src/main.ts"></script>
+
+    <script>
+      // Function to animate the title
+      function animateTitle() {
+        let frames =
+          [
+            ' Pick ',
+            ' your ',
+            ' favourite ',
+            ' colors '
+          ]
+
+        let index = 0 // Index to track current frame
+
+        // Function to update the title with animation
+        function updateTitle() {
+          document.title =
+            frames[
+              index %
+                frames.length
+            ] // Set the title to current frame
+          index++ // Increment index for next frame
+        }
+
+        // Interval to update title every 500 milliseconds (adjust as needed)
+        setInterval(
+          updateTitle,
+          500
+        )
+      }
+
+      // Call the function to start the animation
+      animateTitle()
+    </script>
   </body>
 </html>

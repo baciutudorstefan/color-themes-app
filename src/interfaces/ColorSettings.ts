@@ -3,4 +3,5 @@ export interface ColorSettings {
   secondary: string
   accent: string
   background: string
+  text: string
 }

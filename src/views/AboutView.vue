@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ backgroundColor: colorSettings.background }" class="min-h-screen flex flex-col">
+  <!-- <div :style="{ backgroundColor: colorSettings.background }" class="min-h-screen flex flex-col">
     <Header :colorSettings="colorSettings" />
     <HeroSection :colorSettings="colorSettings" />
     <FeaturesSection :colorSettings="colorSettings" />
@@ -19,32 +19,33 @@
       </div>
     </div>
     <Footer />
-  </div>
+  </div> -->
 </template>
 
 <script lang="ts" setup>
-import { reactive } from 'vue';
-import Header from '../components/Header.vue';
-import HeroSection from '../components/HeroSection.vue';
-import FeaturesSection from '../components/FeaturesSection.vue';
-import ExamplesSection from '../components/ExamplesSection.vue';
-import ButtonsSection from '../components/ButtonsSection.vue';
-import Footer from '../components/Footer.vue';
-import ColorInput from '@/components/ColorInput.vue';
-import type { ColorSettings } from '../interfaces/ColorSettings';
+// import { reactive } from 'vue';
+// import Header from '../components/Header.vue';
+// import HeroSection from '../components/HeroSection.vue';
+// import FeaturesSection from '../components/FeaturesSection.vue';
+// import ExamplesSection from '../components/ExamplesSection.vue';
+// import ButtonsSection from '../components/ButtonsSection.vue';
+// import Footer from '../components/Footer.vue';
+// import ColorInput from '@/components/ColorInput.vue';
+// import type { ColorSettings } from '../interfaces/ColorSettings';
 
-const colorSettings = reactive<ColorSettings>({
-  primary: '#3490dc',
-  secondary: '#ffed4a',
-  accent: '#e3342f',
-  background: '#ffffff',
-});
+// const colorSettings = reactive<ColorSettings>({
+//   primary: '#60A5FA',
+//   secondary: '#DBEAFE',
+//   accent: '#94A3B8',
+//   background: '#FFFFFF',
+//   text: '#1E293B',
+// });
 
-const updateColor = (key: keyof ColorSettings, value: string) => {
-  colorSettings[key] = value;
-};
+// const updateColor = (key: keyof ColorSettings, value: string) => {
+//   colorSettings[key] = value;
+// };
 
-const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+// const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 </script>
 
 <style>

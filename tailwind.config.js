@@ -2,11 +2,10 @@ module.exports =
   {
     purge:
       [
-        './src/**/*.html',
-        './src/**/*.vue',
-        './src/**/*.jsx',
-        './src/**/*.tsx'
+        './src/**/*.{vue,js,ts,jsx,tsx}',
+        './public/index.html'
       ],
+
     darkMode: false, // or 'media' or 'class'
     theme:
       {
@@ -22,6 +21,17 @@ module.exports =
                   '#e3342f',
                 background:
                   '#ffffff'
+              },
+            width:
+              {
+                357: '357px',
+                'fixed-custom-container':
+                  '1120px'
+              },
+            spacing:
+              {
+                '357px':
+                  '357px'
               }
           }
       },
