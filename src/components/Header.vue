@@ -5,12 +5,12 @@
         
       </div>
       <div class="relative" ref="dropdownRef">
-  <button @click="toggleDropdown" class="text-white bg-blue-500 px-4 py-2 rounded">
-    Templates ▾
-  </button>
-  <div v-show="dropdownOpen" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Template 1</a>
-    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Template 2</a>
+        <button @click="toggleDropdown" class="text-white bg-blue-500 px-4 py-2 rounded">
+          Templates ▾
+        </button>
+        <div v-show="dropdownOpen" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
+          <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Template 1</a>
+          <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Template 2</a>
   </div>
 </div>
     </nav>

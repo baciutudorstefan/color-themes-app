@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "@simonwep/pickr": "^1.9.1",
+    "@vueuse/core": "^10.11.0",
     "pinia": "^2.1.7",
     "tinycolor2": "^1.6.0",
     "vue": "^3.4.21",
+    "vue-click-outside": "^1.1.0",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
