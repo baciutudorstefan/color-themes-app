@@ -19,7 +19,7 @@
     </div>
     <div class="relative">
       <img class="object-cover object-center scale-1 h-[288px] w-[357px] border border-1 rounded-md" src="../assets/overlay-image.jpeg" alt="">
-      <div class="absolute inset-0 flex items-center justify-center rounded-md" :style="{ backgroundColor: (shades.primary && shades.primary[6] ? shades.primary[6].color : colorSettings.primary) + '90' }">
+      <div class="absolute inset-0 flex items-center justify-center rounded-md mix-blend-multiply" :style="{ backgroundColor: (shades.primary && shades.primary[6] ? shades.primary[6].color : colorSettings.primary) + '90' }">
         <p class="text-white text-lg"></p>
       </div>
     </div>

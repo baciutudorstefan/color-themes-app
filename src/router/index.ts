@@ -26,14 +26,44 @@ const router =
           {
             path: '/',
             name: 'about',
-            // route level code-splitting
-            // this generates a separate chunk (About.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
             component:
               () =>
                 import(
                   '../components/ColorInput.vue'
-                )
+                ),
+            props:
+              (
+                route
+              ) => ({
+                colorSettings:
+                  {
+                    primary:
+                      route
+                        .query
+                        .primary ||
+                      '#60A5FA',
+                    secondary:
+                      route
+                        .query
+                        .secondary ||
+                      '#DBEAFE',
+                    accent:
+                      route
+                        .query
+                        .accent ||
+                      '#94A3B8',
+                    background:
+                      route
+                        .query
+                        .background ||
+                      '#FFFFFF',
+                    text:
+                      route
+                        .query
+                        .text ||
+                      '#1E293B'
+                  }
+              })
           }
         ]
     }

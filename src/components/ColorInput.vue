@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits, ref, watch , onMounted} from 'vue';
+import { defineProps, defineEmits, ref, watch , onMounted, reactive} from 'vue';
 import tinycolor from 'tinycolor2';
 
 const props = defineProps<{
@@ -201,7 +201,7 @@ const getClosestTailwindColor = (color: string) => {
 const generateShades = (baseColor: string) => {
   baseColorName.value = getClosestTailwindColor(baseColor);
   shades.value = cusomColorShades[baseColorName.value].map((shade, index) => {
-    return { name: `${baseColorName.value} ${index * 100}`, color: shade };
+    return { name: `${baseColorName.value}-${index * 100}`, color: shade };
   });
   emit('update:shades', shades.value);
 };
@@ -228,4 +228,8 @@ onMounted(() => {
   generateShades(props.color);
   console.log(props);
 });
+
+
+
+
 </script>
